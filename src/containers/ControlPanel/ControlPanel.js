@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BreakControl from '../../components/TimeControl/BreakControl/BreakControl';
 import SessionControl from '../../components/TimeControl/SessionControl/SessionControl';
 import Display from '../../components/Display/Display';
+import MediaControl from '../../components/MediaControl/MediaControl';
 
 const BREAK = 'break';
 const SESSION = 'session';
@@ -55,6 +56,7 @@ class ControlPanel extends Component {
           decrease={this.decreaseSessionHandler}
         />
         <Display type={this.state.type} duration={this.state.sessionLength}/>
+        <MediaControl />
       </div>
     );
   }
