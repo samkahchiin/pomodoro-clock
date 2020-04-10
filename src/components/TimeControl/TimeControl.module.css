@@ -1,4 +1,8 @@
 .TimeControl {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0px 30px;
 }
 
 .TimeControl h1 {

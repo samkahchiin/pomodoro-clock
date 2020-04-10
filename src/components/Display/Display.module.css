@@ -1,7 +1,23 @@
 .Display {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #649568;
+  flex-direction: column;
+  border-radius: 40px;
+  margin: 20px;
+  padding: 10px;
 }
 
-.Display h2 {
-  text-transform: capitalize;
+.Display p {
+  text-transform: uppercase;
+  margin: 3px;
+}
+
+.TimeLabel {
+  font-size: 40px;
+}
+
+.TimeLeft {
+  font-size: 70px;
 }

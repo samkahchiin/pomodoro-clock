@@ -4,8 +4,8 @@ import classes from './Display.module.css'
 const display = (props) => {
   return (
     <div className={classes.Display}>
-      <h2 id="timer-label">{props.type}</h2>
-      <h1 id="time-left">{props.duration}</h1>
+      <p id="timer-label" className={classes.TimeLabel}>{props.type}</p>
+      <p id="time-left" className={classes.TimeLeft}>{props.duration}</p>
     </div>
   )
 }

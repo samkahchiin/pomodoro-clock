@@ -1,0 +1,4 @@
+.TimeControlPanel {
+  display: flex;
+  flex-direction: row;
+}

@@ -3,6 +3,7 @@ import BreakControl from '../../components/TimeControl/BreakControl/BreakControl
 import SessionControl from '../../components/TimeControl/SessionControl/SessionControl';
 import Display from '../../components/Display/Display';
 import MediaControl from '../../components/MediaControl/MediaControl';
+import classes from './ControlPanel.module.css'
 
 const BREAK = 'break';
 const SESSION = 'session';
@@ -23,15 +24,19 @@ class ControlPanel extends Component {
 
   increaseSessionHandler = () => {
     if (this.state.sessionMins >= 60) { return };
+    let newMins = this.state.sessionMins + 1;
     this.setState({
-      sessionMins: this.state.sessionMins + 1
+      sessionMins: newMins,
+      displayTime: `${newMins}:00`
     });
   }
 
   decreaseSessionHandler = () => {
     if (this.state.sessionMins <= 1) { return };
+    let newMins = this.state.sessionMins - 1;
     this.setState({
-      sessionMins: this.state.sessionMins - 1
+      sessionMins: newMins,
+      displayTime: `${newMins}:00`
     });
   }
 
@@ -67,7 +72,7 @@ class ControlPanel extends Component {
   }
 
   startTimerHandler = () => {
-    let timer = this.state.duration;
+    let timer = this.state.sessionMins * 60;
     let self = this;
     this.setState({
       isOn: true
@@ -111,16 +116,19 @@ class ControlPanel extends Component {
   render() {
     return(
       <div>
-        <BreakControl
-          duration={this.state.breakMins}
-          increase={this.increaseBreakHandler}
-          decrease={this.decreaseBreakHandler}
-        />
-        <SessionControl
-          duration={this.state.sessionMins}
-          increase={this.increaseSessionHandler}
-          decrease={this.decreaseSessionHandler}
-        />
+        <h1>POMODORO CLOCK</h1>
+        <div className={classes.TimeControlPanel}>
+          <BreakControl
+            duration={this.state.breakMins}
+            increase={this.increaseBreakHandler}
+            decrease={this.decreaseBreakHandler}
+          />
+          <SessionControl
+            duration={this.state.sessionMins}
+            increase={this.increaseSessionHandler}
+            decrease={this.decreaseSessionHandler}
+          />
+        </div>
         <Display
           type={this.state.type}
           duration={this.state.displayTime}/>
