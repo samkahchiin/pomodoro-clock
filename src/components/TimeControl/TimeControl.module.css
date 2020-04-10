@@ -1,0 +1,29 @@
+.TimeControl {
+}
+
+.TimeControl h1 {
+  text-transform: capitalize;
+}
+
+.TimeControl i{
+  border: solid black;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.TimeControl .Duration {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.ArrowUp {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.ArrowDown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
