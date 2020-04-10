@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import BreakControl from '../../components/TimeControl/BreakControl/BreakControl';
 import SessionControl from '../../components/TimeControl/SessionControl/SessionControl';
+import Display from '../../components/Display/Display';
+
+const BREAK = 'break';
+const SESSION = 'session';
 
 class ControlPanel extends Component {
   state = {
+    type: SESSION,
     breakLength: 1,
     sessionLength: 25
   }
@@ -49,6 +54,7 @@ class ControlPanel extends Component {
           increase={this.increaseSessionHandler}
           decrease={this.decreaseSessionHandler}
         />
+        <Display type={this.state.type} duration={this.state.sessionLength}/>
       </div>
     );
   }
