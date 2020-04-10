@@ -3,15 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faSync } from '@fortawesome/free-solid-svg-icons';
 import classes from './MediaControl.module.css';
 
-const mediaControl = () => {
+const mediaControl = (props) => {
   return (
     <div className={classes.MediaControl}>
-      <span id="start_stop">
+      <span id="start_stop"
+        onClick={props.isOn ? props.stopTimer : props.startTimer}>
         <FontAwesomeIcon className="fa-2x" icon={faPlay} />
         <FontAwesomeIcon className="fa-2x" icon={faPause} />
       </span>
       <span id="reset">
-        <FontAwesomeIcon className="fa-2x" icon={faSync} />
+        <FontAwesomeIcon onClick={props.resetTimer} className="fa-2x" icon={faSync} />
       </span>
     </div>
   )
