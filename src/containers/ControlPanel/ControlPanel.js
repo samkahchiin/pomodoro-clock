@@ -27,20 +27,22 @@ class ControlPanel extends Component {
   increaseSessionHandler = () => {
     if (this.state.sessionMins >= 60) { return };
     let newMins = this.state.sessionMins + 1;
+    let displayMins = newMins >= 10 ? newMins.toString() : '0' + newMins;
     this.setState({
       sessionMins: newMins,
       duration: newMins * 60,
-      displayTime: `${newMins}:00`
+      displayTime: `${displayMins}:00`
     });
   }
 
   decreaseSessionHandler = () => {
     if (this.state.sessionMins <= 1) { return };
     let newMins = this.state.sessionMins - 1;
+    let displayMins = newMins >= 10 ? newMins.toString() : '0' + newMins;
     this.setState({
       sessionMins: newMins,
       duration: newMins * 60,
-      displayTime: `${newMins}:00`
+      displayTime: `${displayMins}:00`
     });
   }
 
