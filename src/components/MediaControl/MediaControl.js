@@ -11,9 +11,10 @@ const mediaControl = (props) => {
         <FontAwesomeIcon className="fa-2x" icon={faPlay} />
         <FontAwesomeIcon className="fa-2x" icon={faPause} />
       </span>
-      <span id="reset">
-        <FontAwesomeIcon onClick={props.resetTimer} className="fa-2x" icon={faSync} />
+      <span id="reset" onClick={props.resetTimer}>
+        <FontAwesomeIcon className="fa-2x" icon={faSync} />
       </span>
+      <audio id="beep" src="https://goo.gl/65cBl1" />
     </div>
   )
 }

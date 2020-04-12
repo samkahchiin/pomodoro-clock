@@ -3,21 +3,23 @@ import BreakControl from '../../components/TimeControl/BreakControl/BreakControl
 import SessionControl from '../../components/TimeControl/SessionControl/SessionControl';
 import Display from '../../components/Display/Display';
 import MediaControl from '../../components/MediaControl/MediaControl';
-import classes from './ControlPanel.module.css'
+import classes from './ControlPanel.module.css';
+import mp3 from '../../assets/beep-sound.mp3';
 
 const BREAK = 'break';
 const SESSION = 'session';
 
-const DEFAULT_MIN = 25;
-const DEFAULT_DURATION = DEFAULT_MIN * 60;
-const DEFAULT_DISPLAY = `${DEFAULT_MIN}:00`
+const DEFAULT_SESSION = 25;
+const DEFAULT_BREAK = 5;
+const DEFAULT_DURATION = DEFAULT_SESSION * 60;
+const DEFAULT_DISPLAY = `${DEFAULT_SESSION}:00`
 
 class ControlPanel extends Component {
   state = {
     type: SESSION,
     isOn: false,
-    breakMins: 1,
-    sessionMins: DEFAULT_MIN,
+    breakMins: DEFAULT_BREAK,
+    sessionMins: DEFAULT_SESSION,
     duration: DEFAULT_DURATION,
     displayTime: DEFAULT_DISPLAY
   }
@@ -27,6 +29,7 @@ class ControlPanel extends Component {
     let newMins = this.state.sessionMins + 1;
     this.setState({
       sessionMins: newMins,
+      duration: newMins * 60,
       displayTime: `${newMins}:00`
     });
   }
@@ -36,6 +39,7 @@ class ControlPanel extends Component {
     let newMins = this.state.sessionMins - 1;
     this.setState({
       sessionMins: newMins,
+      duration: newMins * 60,
       displayTime: `${newMins}:00`
     });
   }
@@ -72,30 +76,35 @@ class ControlPanel extends Component {
   }
 
   startTimerHandler = () => {
-    let timer = this.state.sessionMins * 60;
+    let duration = this.state.duration;
     let self = this;
     this.setState({
       isOn: true
     });
 
-    this.timer = setInterval(function() {
-      let mins = parseInt(timer / 60, 10);
-      let secs = parseInt(timer % 60, 10);
+    const countDown = function() {
+      let mins = parseInt(duration / 60, 10);
+      let secs = parseInt(duration % 60, 10);
 
       mins = mins >= 10 ? mins : "0" + mins;
       secs = secs >= 10 ? secs : "0" + secs;
 
-      timer--;
+      duration--;
       self.setState({
         displayTime: mins + ":" + secs,
-        duration: timer
+        duration: duration
       })
 
-      if (timer < 0) {
+      if (duration < 0) {
         self.toggleType();
-        timer = self.state.duration;
+        duration = self.state.duration;
+        self.audio.play();
       }
-    }, 1000);
+    };
+
+    // This will fire the function immediately without waiting for the interval
+    countDown();
+    this.timer = setInterval(countDown, 1000)
   }
 
   stopTimerHandler = () => {
@@ -104,10 +113,14 @@ class ControlPanel extends Component {
   }
 
   resetTimerHandler = () => {
+    this.audio.pause();
+    this.audio.currentTime = 0;
     clearInterval(this.timer);
     this.setState({
       isOn: false,
-      sessionMins: DEFAULT_MIN,
+      type: SESSION,
+      sessionMins: DEFAULT_SESSION,
+      breakMins: DEFAULT_BREAK,
       duration: DEFAULT_DURATION,
       displayTime: DEFAULT_DISPLAY
     })
@@ -138,6 +151,10 @@ class ControlPanel extends Component {
           stopTimer={this.stopTimerHandler}
           resetTimer={this.resetTimerHandler}
         />
+        <audio
+          id='beep'
+          src={mp3}
+          ref={(audio) => this.audio = audio}/>
       </div>
     );
   }
