@@ -73,7 +73,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Pomodoro Clock Screen Shot][product-screenshot]](https://i.postimg.cc/BQTfRfWJ/clock.png)
+[![Pomodoro Clock Screenshot][product-screenshot]](https://i.postimg.cc/BQTfRfWJ/clock.png)
 
 Timer that break work into intervals, separated by short breaks (based on Pomodoro Techniques)
 
@@ -166,3 +166,4 @@ Project Link: [https://github.com/samkahchiin/pomodoro-clock](https://github.com
 [license-url]: https://github.com/samkahchiin/pomodoro-clock/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/kahchiin-sam/
+[product-screenshot]: https://i.postimg.cc/BQTfRfWJ/clock.png
