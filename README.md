@@ -82,7 +82,7 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 * yarn
   ```sh
-  npm install npm@latest -g
+  npm install --global yarn
   ```
 
 ### Installation
