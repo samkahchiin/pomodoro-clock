@@ -154,15 +154,15 @@ Project Link: [https://github.com/samkahchiin/pomodoro-clock](https://github.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/samkahchiin/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/samkahchiin/pomodoro-clock.svg?style=for-the-badge
 [contributors-url]: https://github.com/samkahchiin/pomodoro-clock/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/samkahchiin/repo.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/samkahchiin/pomodoro-clock.svg?style=for-the-badge
 [forks-url]: https://github.com/samkahchiin/pomodoro-clock/network/members
-[stars-shield]: https://img.shields.io/github/stars/samkahchiin/repo.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/samkahchiin/pomodoro-clock.svg?style=for-the-badge
 [stars-url]: https://github.com/samkahchiin/pomodoro-clock/stargazers
-[issues-shield]: https://img.shields.io/github/issues/samkahchiin/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/samkahchiin/pomodoro-clock.svg?style=for-the-badge
 [issues-url]: https://github.com/samkahchiin/pomodoro-clock/issues
-[license-shield]: https://img.shields.io/github/license/samkahchiin/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/samkahchiin/pomodoro-clock?style=for-the-badge
 [license-url]: https://github.com/samkahchiin/pomodoro-clock/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/kahchiin-sam/
