@@ -1,9 +1,3 @@
-<!--
-*** Reference: https://github.com/othneildrew/Best-README-Template
--->
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -61,7 +55,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -107,15 +100,6 @@ To get a local copy up and running follow these simple steps.
    yarn start
    ```
 
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -134,7 +118,6 @@ Contributions are what make the open source community such an amazing place to l
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
 <!-- CONTACT -->
 ## Contact
 
@@ -147,9 +130,7 @@ Project Link: [https://github.com/samkahchiin/pomodoro-clock](https://github.com
 ## Acknowledgements
 
 * Sam Kah Chiin
-
-
-
+* [README references](https://github.com/othneildrew/Best-README-Template)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
